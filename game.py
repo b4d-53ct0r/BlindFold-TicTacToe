@@ -48,9 +48,15 @@ def main():
             break
         if F == 0:
             while True:
-                M = list(input('[*] player 1 : '))
-                if is_free(int(M[1])-1,location[M[0]],Board):
-                    break
+                M = list()
+                while M==[]:
+                    try:
+                        M = list(input('[*] player 1 : '))
+                        if is_free(int(M[1])-1,location[M[0]],Board):
+                            break
+                    except:
+                        M=list()
+                
             C += 1
             Board[int(M[1])-1][location[M[0]]] = "X" 
             F = 1
@@ -59,9 +65,16 @@ def main():
                 break
         else :
             while True:
-                M = list(input('[*] player 2 : '))
-                if is_free(int(M[1])-1,location[M[0]],Board):
-                    break
+                M = list()
+                while M==[]:
+                    try:
+                        M = list(input('[*] player 2 : '))
+                        if is_free(int(M[1])-1,location[M[0]],Board):
+                            break
+                    except:
+                        M=list()
+                        
+                
             C += 1
             Board[int(M[1])-1][location[M[0]]] = "O"
             F = 0
